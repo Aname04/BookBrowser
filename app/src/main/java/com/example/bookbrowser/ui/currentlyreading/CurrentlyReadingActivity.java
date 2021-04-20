@@ -6,9 +6,11 @@ import android.os.Bundle;
 
 import com.example.bookbrowser.R;
 
+import javax.inject.Inject;
+
 public class CurrentlyReadingActivity extends AppCompatActivity implements CurrentlyReadingScreen {
 
-    CurrentlyReadingPresenter presenter;
+    @Inject private CurrentlyReadingPresenter presenter = new CurrentlyReadingPresenter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

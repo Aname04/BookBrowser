@@ -6,9 +6,11 @@ import android.os.Bundle;
 
 import com.example.bookbrowser.R;
 
+import javax.inject.Inject;
+
 public class AboutActivity extends AppCompatActivity implements AboutScreen {
 
-    AboutPresenter presenter;
+    @Inject private AboutPresenter presenter = new AboutPresenter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
