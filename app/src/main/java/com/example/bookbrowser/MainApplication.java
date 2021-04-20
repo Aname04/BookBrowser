@@ -11,6 +11,6 @@ public class MainApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        injector = DaggerApplicationComponent.create();
+        //injector = DaggerApplicationComponent.create();
     }
 }
