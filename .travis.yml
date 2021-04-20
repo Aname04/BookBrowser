@@ -1,1 +1,2 @@
-install: skip
+language: android
+dist: trusty
