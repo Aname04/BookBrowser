@@ -1,4 +1,4 @@
 package com.example.bookbrowser;
 
-public interface APIInteractor {
+public class DatabaseInteractor {
 }
