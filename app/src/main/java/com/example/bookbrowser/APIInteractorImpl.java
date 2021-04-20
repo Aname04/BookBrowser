@@ -1,4 +1,4 @@
 package com.example.bookbrowser;
 
-public class APIInteractor {
+public class APIInteractorImpl implements APIInteractor{
 }
