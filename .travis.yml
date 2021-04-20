@@ -4,13 +4,11 @@ dist: trusty
 android:
   components:
     - build-tools-29.0.3
-    - android-29
     
+    - android-$ANDROID_EMULATOR_LEVEL
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - sys-img-x86-android-26
-    - sys-img-armeabi-v7a-android-21
     - sys-img-armeabi-v7a-google_apis-$ANDROID_EMULATOR_LEVEL
    licenses:
     - 'android-sdk-license-.+'
@@ -27,10 +25,10 @@ env:
 # Emulator Management: Create, Start and Wait
 before_script:
   - echo no | android create avd --force -n test -t "android-"$ANDROID_EMULATOR_LEVEL --abi $ANDROID_ABI --tag $ANDROID_TAG
-  - emulator -avd test -no-window &
+  - emulator -avd test -no-skin -no-audio -no-window -gpu off &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
 
 script:
   - android list target
-  - ./gradlew --info connectedAndroidTest
+  - ./gradlew connectedAndroidTest
