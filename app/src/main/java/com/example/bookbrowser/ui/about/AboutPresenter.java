@@ -9,17 +9,17 @@ import javax.inject.Inject;
 
 public class AboutPresenter implements Presenter<AboutScreen> {
 
-    @Inject private AboutActivity aboutActivity = null;
+    @Inject AboutScreen aboutScreen;
     @Inject APIInteractor apiInteractor;
     @Inject DatabaseInteractor databaseInteractor;
 
     @Override
     public void onAttach(AboutScreen screen){
-        aboutActivity = (AboutActivity) screen;
+        aboutScreen = screen;
     }
 
     @Override
     public void onDetach(){
-        aboutActivity = null;
+        aboutScreen = null;
     }
 }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.bookbrowser.MainApplication;
 import com.example.bookbrowser.R;
 
 import javax.inject.Inject;
@@ -16,6 +17,8 @@ public class AboutActivity extends AppCompatActivity implements AboutScreen {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
+
+        ((MainApplication) getApplicationContext()).injector.inject(this);
     }
 
     @Override
